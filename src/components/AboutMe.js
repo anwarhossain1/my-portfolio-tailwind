@@ -1,19 +1,13 @@
 import Image from "next/image";
 import React from "react";
+import css from "../../assets/techs/css.png";
+import html from "../../assets/techs/html.png";
+import js from "../../assets/techs/js.png";
+import nextjs from "../../assets/techs/nextjs.png";
+import react from "../../assets/techs/react.png";
+import reduxImage from "../../assets/techs/redux.png";
 
-const skills = [
-  { skill: "HTML" },
-  { skill: "CSS" },
-  { skill: "JavaScript" },
-  { skill: "TypeScript" },
-  { skill: "Python" },
-  { skill: "React" },
-  { skill: "Next.js" },
-  { skill: "Tailwind CSS" },
-  { skill: "Git" },
-  { skill: "GitHub" },
-  { skill: "Jupyter Notebooks" },
-];
+const skills = [html, css, js, react, reduxImage, nextjs];
 
 const experiences = [
   "✓ 1.5+ years of professional working experience in ReactJS, NextJS, JavaScript, MaterialUi and Front-end development .",
@@ -86,25 +80,28 @@ const AboutMe = () => {
           </div>
           <div className="text-center md:w-1/2 md:text-left">
             <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
+            <div className="flex flex-wrap flex-row justify-center gap-3 z-10 md:justify-start">
               {skills.map((item, idx) => {
                 return (
-                  <p
-                    key={idx}
-                    className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
-                  >
-                    {item.skill}
-                  </p>
+                  <div key={idx}>
+                    <Image
+                      src={item}
+                      alt=""
+                      //width={70}
+                      height={70}
+                      //className="bg-none	shadow-2xl"
+                    />
+                  </div>
                 );
               })}
             </div>
-            <Image
+            {/* <Image
               src="/hero-image.png"
               alt=""
               width={325}
               height={325}
               className="hidden md:block md:relative md:bottom-4 md:left-32 md:z-0"
-            />
+            /> */}
           </div>
         </div>
       </div>
