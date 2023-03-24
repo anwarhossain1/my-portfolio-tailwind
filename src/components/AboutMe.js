@@ -24,6 +24,11 @@ const experiences = [
 ];
 
 const AboutMe = () => {
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <section id="about">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
@@ -49,9 +54,10 @@ const AboutMe = () => {
               <span className="font-bold">I have,</span>
               <br />
 
-              {experiences.map((item, index) => {
-                return <p key={index}>{item}</p>;
-              })}
+              {mounted &&
+                experiences.map((item, index) => {
+                  return <p key={index}>{item}</p>;
+                })}
             </p>
             <p>
               I graduated from University of Asia Pacific, Dhaka, Bangladesh in
