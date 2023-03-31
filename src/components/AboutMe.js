@@ -1,5 +1,6 @@
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import css from "../../assets/techs/css.png";
 import html from "../../assets/techs/html.png";
 import jss from "../../assets/techs/jss.png";
@@ -20,6 +21,31 @@ const experiences = [
 
 const AboutMe = () => {
   const [mounted, setMounted] = React.useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const images = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   React.useEffect(() => {
     setMounted(true);
@@ -79,23 +105,30 @@ const AboutMe = () => {
               always open to new opportunities. 🙂
             </p> */}
           </div>
-          <div className="text-center md:w-1/2 md:text-left">
+          <div className="text-center md:w-1/2 md:text-left" ref={ref}>
             <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap flex-row justify-center gap-3 z-10 md:justify-start">
-              {skills.map((item, idx) => {
-                return (
-                  <div key={idx}>
-                    <Image
-                      src={item}
-                      alt=""
-                      //width={70}
-                      height={70}
-                      //className="bg-none	shadow-2xl"
-                    />
-                  </div>
-                );
-              })}
-            </div>
+            {isInView && (
+              <motion.div variants={variants} initial="hidden" animate="show">
+                <div className="flex flex-wrap flex-row justify-center gap-3 z-10 md:justify-start">
+                  {skills.map((item, idx) => {
+                    return (
+                      <div key={idx}>
+                        <motion.div variants={images} class="group relative">
+                          <Image
+                            src={item}
+                            alt=""
+                            //width={70}
+                            height={70}
+                            //className="bg-none	shadow-2xl"
+                          />
+                        </motion.div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+
             {/* <Image
               src="/hero-image.png"
               alt=""

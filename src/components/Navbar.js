@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -58,7 +59,7 @@ const Navbar = () => {
                     key={idx}
                     to={item.page}
                     className={
-                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100 cursor-pointer"
+                      "block lg:inline-block text-neutral-900  dark:text-neutral-100 cursor-pointer"
                     }
                     activeClass="active"
                     spy={true}
@@ -67,7 +68,9 @@ const Navbar = () => {
                     duration={500}
                     onClick={() => setNavbar(!navbar)}
                   >
-                    {item.label}
+                    <motion.div whileHover={{ scale: 1.1 }}>
+                      {item.label}
+                    </motion.div>
                   </Link>
                 );
               })}
