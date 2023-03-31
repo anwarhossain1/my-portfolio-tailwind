@@ -1,29 +1,32 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-
+import stackfood from "../../assets/project/stackfood.png";
+import SlideUp from "./SlideUp";
 const projects = [
   {
-    name: "Thankful Thoughts",
+    name: "Stackfood",
     description:
-      "ThankfulThoughts is a web app that generates an appreciative sentence of something or someone you are thankful for.",
-    image: "/thankfulthoughts.png",
+      "Stackfood, is a food delivery system. I developed the whole system for my current work place.",
+    image: stackfood,
     github: "https://github.com/hqasmei/thankful-thoughts",
-    link: "https://thankfulthoughts.io/",
+    link: "https://stackfood-react.6amtech.com",
   },
-  {
-    name: "PlatoIO",
-    description: "PlatoIO is a to do list app that built using the PERN stack.",
-    image: "/platoio.png",
-    github: "https://github.com/hqasmei/platoio",
-    link: "https://platoio.com/register",
-  },
-  {
-    name: "Kator Family Photos",
-    description:
-      "Kator Family Photos is a photos and video digitization service in the LA area.",
-    image: "/familyphotos.png",
-    github: "https://github.com/hqasmei/katorfamilyphotos",
-    link: "https://katorfamilyphotos.com/",
-  },
+  // {
+  //   name: "PlatoIO",
+  //   description: "PlatoIO is a to do list app that built using the PERN stack.",
+  //   image: "/platoio.png",
+  //   github: "https://github.com/hqasmei/platoio",
+  //   link: "https://platoio.com/register",
+  // },
+  // {
+  //   name: "Kator Family Photos",
+  //   description:
+  //     "Kator Family Photos is a photos and video digitization service in the LA area.",
+  //   image: "/familyphotos.png",
+  //   github: "https://github.com/hqasmei/katorfamilyphotos",
+  //   link: "https://katorfamilyphotos.com/",
+  // },
 ];
 
 const ProjectsSection = () => {
@@ -35,13 +38,13 @@ const ProjectsSection = () => {
       </h1>
 
       <div className="flex flex-col space-y-28">
-        {/* {projects.map((project, idx) => {
+        {projects.map((project, idx) => {
           return (
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
-                <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
+                <div className="flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12 mb-10">
                   <div className=" md:w-1/2">
-                    <Link href={project.link}>
+                    <Link href={project.link} target="_blank">
                       <Image
                         src={project.image}
                         alt=""
@@ -58,16 +61,16 @@ const ProjectsSection = () => {
                     </p>
                     <div className="flex flex-row align-bottom space-x-4">
                       <Link href={project.github} target="_blank">
-                        <BsGithub
+                        {/* <BsGithub
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
-                        />
+                        /> */}
                       </Link>
                       <Link href={project.link} target="_blank">
-                        <BsArrowUpRightSquare
+                        {/* <BsArrowUpRightSquare
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
-                        />
+                        /> */}
                       </Link>
                     </div>
                   </div>
@@ -75,7 +78,7 @@ const ProjectsSection = () => {
               </SlideUp>
             </div>
           );
-        })} */}
+        })}
       </div>
     </section>
   );
