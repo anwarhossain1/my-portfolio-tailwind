@@ -1,5 +1,6 @@
 import { ThemeProvider } from "next-themes";
 import AboutMe from "../src/components/AboutMe";
+import Footer from "../src/components/Footer";
 import FramerAnimation from "../src/components/FramerAnimation";
 import HeroSection from "../src/components/HeroSection";
 import Navbar from "../src/components/Navbar";
@@ -17,6 +18,7 @@ export default function Home() {
           <AboutMe />
           <ProjectsSection />
         </main>
+        <Footer />
       </ThemeProvider>
     </>
   );
