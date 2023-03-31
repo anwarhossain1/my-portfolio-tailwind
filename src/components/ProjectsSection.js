@@ -35,8 +35,8 @@ const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
-    <section id="projects">
-      <h1 className="my-10 text-center font-bold text-4xl" ref={ref}>
+    <section id="projects" ref={ref}>
+      <h1 className="my-10 text-center font-bold text-4xl">
         My Projects
         <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
       </h1>
@@ -61,7 +61,7 @@ const ProjectsSection = () => {
                         </Link>
                       </div>
                       <div className="mt-8 md:w-1/2">
-                        <h1 className="text-4xl font-bold mb-6">
+                        <h1 className="text-3xl font-bold mb-6">
                           {project.name}
                         </h1>
                         <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400">
