@@ -2,12 +2,13 @@ import Image from "next/image";
 import React from "react";
 import css from "../../assets/techs/css.png";
 import html from "../../assets/techs/html.png";
-import js from "../../assets/techs/js.png";
+import jss from "../../assets/techs/jss.png";
+import mui from "../../assets/techs/mui.png";
 import nextjs from "../../assets/techs/nextjs.png";
 import react from "../../assets/techs/react.png";
 import reduxImage from "../../assets/techs/redux.png";
 
-const skills = [html, css, js, react, reduxImage, nextjs];
+const skills = [react, nextjs, reduxImage, mui, html, css, jss];
 
 const experiences = [
   "✓ 1.5+ years of professional working experience in ReactJS, NextJS, JavaScript, MaterialUi and Front-end development .",
