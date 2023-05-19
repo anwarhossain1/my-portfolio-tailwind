@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { Link } from "react-scroll/modules";
+
 const NAV_ITEMS = [
   {
     label: "Home",
@@ -19,6 +20,9 @@ const NAV_ITEMS = [
   },
 ];
 
+// ${
+//         currentTheme === "dark" ? "bg-black" : "bg-white"
+//       }
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -26,9 +30,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <header
-      className={`w-full mx-auto  px-4 md:px-20 fixed top-0 z-50 shadow ${
-        currentTheme === "dark" ? "bg-black" : "bg-white"
-      }`}
+      className={`w-full mx-auto  px-4 md:px-20 fixed top-0 z-50 shadow  "bg-white" `}
     >
       <div className="justify-between md:items-center md:flex">
         <div>
@@ -71,11 +73,12 @@ const Navbar = () => {
                       duration={500}
                       onClick={() => setNavbar(!navbar)}
                     >
-                      {item.label}
+                      <h2>{item.label}</h2>
                     </Link>
                   </motion.div>
                 );
               })}
+
               {/* {currentTheme === "dark" ? (
                 <button
                   onClick={() => setTheme("light")}
