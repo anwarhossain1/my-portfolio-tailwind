@@ -6,10 +6,29 @@ import html from "../../assets/techs/html.png";
 import jss from "../../assets/techs/jss.png";
 import mui from "../../assets/techs/mui.png";
 import nextjs from "../../assets/techs/nextjs.png";
+import trello from "../../assets/techs/pngwing.com (5).png";
+import jiraa from "../../assets/techs/pngwing.com (6).png";
+import webstrom from "../../assets/techs/pngwing.com (7).png";
 import react from "../../assets/techs/react.png";
 import reduxImage from "../../assets/techs/redux.png";
+import reactQuery from "../../assets/techs/repo-dark.png";
+import tailwind from "../../assets/techs/tailwind.png";
+import typescript from "../../assets/techs/typescript.png";
+import vscode from "../../assets/techs/vscode.png";
 
-const skills = [react, nextjs, reduxImage, mui, html, css, jss];
+const skills = [
+  react,
+  nextjs,
+  reduxImage,
+  reactQuery,
+  mui,
+  tailwind,
+  html,
+  css,
+  jss,
+  typescript,
+];
+const tools = [trello, jiraa, webstrom, vscode];
 
 const experiences = [
   "✓ 1.5+ years of professional working experience in ReactJS, NextJS, JavaScript, MaterialUi and Front-end development .",
@@ -109,7 +128,7 @@ const AboutMe = () => {
             <h1 className="text-2xl font-bold mb-6">My Skills</h1>
             {isInView && (
               <motion.div variants={variants} initial="hidden" animate="show">
-                <div className="flex flex-wrap flex-row justify-center gap-3 z-10 md:justify-start">
+                <div className="flex flex-wrap flex-row items-center justify-center gap-3 z-10 md:justify-start">
                   {skills.map((item, idx) => {
                     return (
                       <div key={idx}>
@@ -117,8 +136,8 @@ const AboutMe = () => {
                           <Image
                             src={item}
                             alt=""
-                            //width={70}
-                            height={70}
+                            width={80}
+                            height={50}
                             //className="bg-none	shadow-2xl"
                           />
                         </motion.div>
@@ -129,13 +148,30 @@ const AboutMe = () => {
               </motion.div>
             )}
 
-            {/* <Image
-              src="/hero-image.png"
-              alt=""
-              width={325}
-              height={325}
-              className="hidden md:block md:relative md:bottom-4 md:left-32 md:z-0"
-            /> */}
+            <div className="mt-10">
+              <h1 className="text-2xl font-bold mb-6">Tools</h1>
+              {isInView && (
+                <motion.div variants={variants} initial="hidden" animate="show">
+                  <div className="flex flex-wrap flex-row items-center justify-center gap-3 z-10 md:justify-start">
+                    {tools.map((item, idx) => {
+                      return (
+                        <div key={idx}>
+                          <motion.div variants={images} class="group relative">
+                            <Image
+                              src={item}
+                              alt=""
+                              width={80}
+                              height={50}
+                              //className="bg-none	shadow-2xl"
+                            />
+                          </motion.div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </div>
         </div>
       </div>

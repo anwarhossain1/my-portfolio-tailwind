@@ -2,6 +2,7 @@ import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
+import sixammart from "../../assets/project/6ammart.png";
 import stackfood from "../../assets/project/stackfood.png";
 import FramerAnimation from "./FramerAnimation";
 import SlideUp from "./SlideUp";
@@ -9,26 +10,19 @@ const projects = [
   {
     name: "Stackfood",
     description:
-      "Stackfood, is a food delivery system. I developed the whole system for my current work place.",
+      "Stackfood, is a food delivery system. I with a junior devloper, design and developed the whole frontend of the system for my current work place. This is a code canyon based product",
     image: stackfood,
     github: "https://github.com/hqasmei/thankful-thoughts",
     link: "https://stackfood-react.6amtech.com",
   },
-  // {
-  //   name: "PlatoIO",
-  //   description: "PlatoIO is a to do list app that built using the PERN stack.",
-  //   image: "/platoio.png",
-  //   github: "https://github.com/hqasmei/platoio",
-  //   link: "https://platoio.com/register",
-  // },
-  // {
-  //   name: "Kator Family Photos",
-  //   description:
-  //     "Kator Family Photos is a photos and video digitization service in the LA area.",
-  //   image: "/familyphotos.png",
-  //   github: "https://github.com/hqasmei/katorfamilyphotos",
-  //   link: "https://katorfamilyphotos.com/",
-  // },
+  {
+    name: "6ammart",
+    description:
+      "6ammart, is a module based delivery system. This system is consisted with 5 modules which are, Grocery, Food, Shop, Pharmacy and Delivery. I with a junior devloper, design and developed the whole system for my current work place. This is a code canyon based product",
+    image: sixammart,
+    github: "https://github.com/hqasmei/thankful-thoughts",
+    link: "https://6ammart-react.6amtech.com",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -67,6 +61,10 @@ const ProjectsSection = () => {
                         <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400">
                           {project.description}
                         </p>
+                        <div>
+                          <h3>Tools used : </h3>
+                        </div>
+
                         <div className="flex flex-row align-bottom space-x-4">
                           <Link href={project.github} target="_blank">
                             {/* <BsGithub
