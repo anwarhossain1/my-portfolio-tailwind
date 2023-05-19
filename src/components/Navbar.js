@@ -30,7 +30,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <header
-      className={`w-full mx-auto  px-4 md:px-20 fixed top-0 z-50 shadow  "bg-white" `}
+      className={`w-full mx-auto  px-4 md:px-20 fixed top-0 z-50 shadow  bg-white`}
     >
       <div className="justify-between md:items-center md:flex">
         <div>
