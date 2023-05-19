@@ -4,8 +4,14 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import sixammart from "../../assets/project/6ammart.png";
 import stackfood from "../../assets/project/stackfood.png";
+import mui from "../../assets/techs//mui.png";
+import nextjs from "../../assets/techs/nextjs.png";
+import react from "../../assets/techs/react.png";
+import redux from "../../assets/techs/redux.png";
+import reactQuery from "../../assets/techs/repo-dark.png";
 import FramerAnimation from "./FramerAnimation";
 import SlideUp from "./SlideUp";
+
 const projects = [
   {
     name: "Stackfood",
@@ -14,6 +20,7 @@ const projects = [
     image: stackfood,
     github: "https://github.com/hqasmei/thankful-thoughts",
     link: "https://stackfood-react.6amtech.com",
+    tools: [react, nextjs, redux, reactQuery, mui],
   },
   {
     name: "6ammart",
@@ -22,6 +29,7 @@ const projects = [
     image: sixammart,
     github: "https://github.com/hqasmei/thankful-thoughts",
     link: "https://6ammart-react.6amtech.com",
+    tools: [react, nextjs, redux, reactQuery, mui],
   },
 ];
 
@@ -63,6 +71,19 @@ const ProjectsSection = () => {
                         </p>
                         <div>
                           <h3>Tools used : </h3>
+                          <div className="flex flex-row items-center gap-3 mt-3">
+                            {project?.tools?.map((item, index) => {
+                              return (
+                                <Image
+                                  key={index}
+                                  width={60}
+                                  height={60}
+                                  src={item}
+                                  alt=""
+                                />
+                              );
+                            })}
+                          </div>
                         </div>
 
                         <div className="flex flex-row align-bottom space-x-4">
